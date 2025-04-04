@@ -226,6 +226,11 @@ dist: $(RELEASE_FILE)
 clean:
 	rm -rvf */*~ *~ .*~ */.*.swp .*.swp $(ALL) *.o core/*.jsonnet.h Makefile.depend *.so.* build jsonnet.egg-info $(RELEASE_FILE)
 
+# iOS XCFramework build
+ios-xcframework:
+	chmod +x ./build_ios_xcframework.sh
+	./build_ios_xcframework.sh
+
 -include Makefile.depend
 
-.PHONY: default all depend clean reformat test test-formatting
+.PHONY: default all depend clean reformat test test-formatting ios-xcframework
